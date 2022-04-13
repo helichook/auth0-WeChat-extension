@@ -1,18 +1,18 @@
 {
-    "title": "Auth0 Singpass Proxy Extension",
-    "name": "auth0-singpass-extension",
+    "title": "Auth0 WeChat Proxy Extension",
+    "name": "auth0-WeChat-extension",
     "version": "1.0.0",
     "author": "Auth0",
     "useHashName": false,
-    "description": "singpass proxy endpoint to support private key jwt / client assertion",
+    "description": "WeChat proxy endpoint to support private key jwt / client assertion",
     "type": "application",
     "category": "end_user",
-    "logoUrl": "https://app.singpass.gov.sg/static/og_image.png",
+    "logoUrl": "https://app.WeChat.gov.sg/static/og_image.png",
     "initialUrlPath": "/",
     "keywords": [
       "auth0",
       "extension",
-      "singpass"
+      "WeChat"
     ],
     "secrets": {
       "AUTH0_CUSTOM_DOMAIN": {
@@ -28,45 +28,28 @@
         "description": "Client Secret",
         "required": true
       },
-      "SINGPASS_ENVIRONMENT": {
-        "description": "Singpass Environment Staging",
+      "WeChat_SIGNING_TYPE": {
+        "description": "Signing TYPE",
         "type": "select",
         "allowMultiple": false,
-        "default": "https://stg-id.singpass.gov.sg",
+        "default": "Mini",
         "options": [
           {
-            "value": "https://stg-id.singpass.gov.sg",
-            "text": "Staging"
+            "value": "Mini",
+            "text": "Mini"
+          },
+          {
+            "value": "PC_WEB",
+            "text": "PC_WEB"
           }
         ]
       },
-      "SINGPASS_CLIENT_ID": {
-        "description": "Singpass Registered client_id",
+      "WeChat_CLIENT_ID": {
+        "description": "WeChat Registered client_id",
         "required": true
       },
-      "SINGPASS_SIGNING_ALG": {
-        "description": "Signing Algorithm",
-        "type": "select",
-        "allowMultiple": false,
-        "default": "ES256",
-        "options": [
-          {
-            "value": "ES256",
-            "text": "ES256"
-          }
-        ]
-      },
-      "RELYING_PARTY_JWKS_ENDPOINT": {
-        "description": "Relying Party JSON Web Key",
-        "example": "https://rp.com/.well-known/jwks.json",
-        "required": true
-      },
-      "RELYING_PARTY_PRIVATE_KEY": {
-        "description": "Relying Party Private Key",
-        "required": true
-      },
-      "RELYING_PARTY_KID": {
-        "description": "Relying Party KID",
+      "WeChat_CLIENT_SECRET": {
+        "description": "Client Secret",
         "required": true
       }
     }
