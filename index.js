@@ -1,15 +1,11 @@
-import {MINI_PROGRAM_TOKEN} from "./WeChat_API";
+//https://api.weixin.qq.com/sns/jscode2session?appid=APPID&secret=SECRET&js_code=JSCODE&grant_type=authorization_code
+const MINI_PROGRAM_TOKEN= "https://api.weixin.qq.com/sns/jscode2session?grant_type=authorization_code"
+
 
 var express = require('express');
 var Webtask = require('webtask-tools');
 var bodyParser = require('body-parser');
-const { SignJWT } = require('jose/dist/node/cjs/jwt/sign');
-const { parseJwk } = require('jose/dist/node/cjs/jwk/parse');
-const { jwtVerify } = require('jose/dist/node/cjs/jwt/verify');
-const crypto = require("crypto");
-const uuid = require("uuid");
 const axios = require("axios").default;
-const qs = require('qs');
 var app = express();
 
 app.use(bodyParser.json());
@@ -21,9 +17,6 @@ app.get('/.well-known/openid-configuration', (req, res) => {
         "authorization_endpoint": `${wtUrl}/authorize`,
         "token_endpoint": `${wtUrl}/token`
     });
-});
-app.get('/authorize', (req, res) => {
-
 });
 
 app.post('/token', async function (req, res) {
