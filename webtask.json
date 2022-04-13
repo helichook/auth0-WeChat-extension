@@ -1,7 +1,7 @@
 {
     "title": "Auth0 WeChat Proxy Extension",
     "name": "auth0-WeChat-extension",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "author": "Auth0",
     "useHashName": false,
     "description": "WeChat proxy endpoint to support private key jwt / client assertion",
